@@ -72,8 +72,8 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     Navigator.of(context).pushReplacement(
       PageRouteBuilder(
         transitionDuration: const Duration(milliseconds: 700),
-        pageBuilder: (_, __, ___) => const HomeScreen(),
-        transitionsBuilder: (_, animation, __, child) {
+        pageBuilder: (_, _, _) => const HomeScreen(),
+        transitionsBuilder: (_, animation, _, child) {
           final offsetAnimation = Tween<Offset>(
             begin: const Offset(0.25, 0),
             end: Offset.zero,
@@ -102,7 +102,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
           child: Center(
             child: AnimatedBuilder(
               animation: _controller,
-              builder: (_, __) {
+              builder: (_, _) {
                 return Opacity(
                   opacity: _fadeAnimation.value,
                   child: Transform.translate(
